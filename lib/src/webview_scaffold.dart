@@ -225,7 +225,7 @@ class _WebviewPlaceholderRender extends RenderProxyBox {
   @override
   void paint(PaintingContext context, Offset offset) {
     super.paint(context, offset);
-    final rect = offset & size;
+    final rect = Rect.fromLTWH(offset.dx, offset.dy, size.width.ceil().toDouble(), size.height.ceil().toDouble());
     if (_rect != rect) {
       _rect = rect;
       notifyRect();
